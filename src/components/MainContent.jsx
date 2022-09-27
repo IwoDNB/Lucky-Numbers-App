@@ -5,7 +5,7 @@ import wowTwo from '../img/comic 2.png'
 import luckyOne from '../img/clover(3) 1.png'
 import luckyTwo from '../img/clover(3) 2.png'
 import gold from '../img/money-bag 1.png'
-import goldTwo from '../img/money-bag 2.png'
+import goldTwo from '../img/money-bag 3.png'
 
 
 function MainContent({NUMONE, NUMTWO, NUMTHREE, NUMFOUR}) {
@@ -23,9 +23,13 @@ function MainContent({NUMONE, NUMTWO, NUMTHREE, NUMFOUR}) {
     Array.from({ length: NUMTHREE }, () => generateRandomNum(NUMFOUR));
   // update state with numbers from second function
 
+ function compareNumbers(a, b) {
+  return a - b;
+}
+
   const handleNumGenerate = () => {
 
-    setRandom(generateRandomArrayOfNums());
+    setRandom(generateRandomArrayOfNums().sort(compareNumbers));
     
   };
 
